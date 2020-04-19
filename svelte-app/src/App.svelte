@@ -1,17 +1,31 @@
 <script>
-	export let name;
+	import NavBar from './components/common/NavBar.svelte';
+	import Button from './components/common/Button.svelte';
+	import BookGrid from './components/BookGrid.svelte';
+
+	let books = [
+		{
+			title: "What I Think About When I Think About Running.",
+			author: "Murakami",
+			rating: 4,
+		},
+		{
+			title: "The Beach.",
+			author: "Leonardo Di Caprio",
+			rating: 3,
+		}
+	]
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<NavBar username="katie wise" />
+	<Button>add book</Button>
+	<BookGrid books="{books}" />
 </main>
 
 <style>
 	main {
 		text-align: center;
-		padding: 1em;
-		max-width: 240px;
 		margin: 0 auto;
 	}
 
