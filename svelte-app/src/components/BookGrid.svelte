@@ -1,16 +1,19 @@
 <script>
+    import Book from './Book.svelte'; 
     export let books = [];
 </script>
 
-<div class="books-container">
+<div id="books-container">
     {#each books as book}
-        <p>Title: {book.title}</p>
-        <p>Author: {book.author}</p>
-        <p>Rating: {book.rating}</p>        
-        <hr />
+        <Book {book} />
     {/each}
 </div>
 
 <style>
 
+    #books-container {
+        display: grid;
+        margin: 2em;
+        grid-template-columns: repeat(5, 1fr);
+    }
 </style>
