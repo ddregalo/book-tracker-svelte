@@ -1,16 +1,17 @@
-# Svelte Book Tracker
+# svelte book tracker
 
 Using svelte to make a basic book tracker where you can rate each book you've read and hopefully the app will display some cool visuals.
 
-## Frameworks & Libraries
+## frameworks & libraries
 * svelte
 * rollup-plugin-svelte
+* json-server
 
-## Testing
+## testing
 
 
 
-## Get started
+## get started
 
 Install the dependencies...
 
@@ -19,7 +20,7 @@ cd svelte-app
 npm install
 ```
 
-...then start [Rollup](https://rollupjs.org):
+...then start:
 
 ```bash
 npm run dev
