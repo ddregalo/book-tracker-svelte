@@ -5,13 +5,15 @@
 
 	let books = [
 		{
-			title: "What I Think About When I Think About Running.",
-			author: "Murakami",
+			title: 'What I Think About When I Think About Running',
+			author: 'Haruki Murakami',
+			coverUrl: 'https://miro.medium.com/max/3056/1*cApQ5sl_OaVJMwHFpoOc1Q.jpeg',
 			rating: 4,
 		},
 		{
-			title: "The Beach.",
-			author: "Leonardo Di Caprio",
+			title: 'The Beach',
+			author: 'Alex Garland',
+			coverUrl: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1539508673l/578523._SY475_.jpg',
 			rating: 3,
 		}
 	]
@@ -34,6 +36,10 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
+	}
+
+	#add-book-btn {
+		margin: 4em;
 	}
 
 	@media (min-width: 640px) {
