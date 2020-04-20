@@ -8,9 +8,11 @@
 <style>
  .button-container { 
      max-width: 8em;
-     max-height: 1.2em;
+     min-height: 2em;
+     line-height: 2em;
      border-radius: 12px;
      cursor: pointer;
      background-color: aqua;
+     margin: 2em auto;
  }
 </style>
