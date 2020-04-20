@@ -1,10 +1,14 @@
 export const booksApiUrl = 'http://localhost:3000/books';
 
-export function Post(path, book) {
+export function get(path) {
+  return send(path)
+}
+
+export function post(path, book) {
   return send(path, 'POST', book)
 }
 
-export function Update(path, book) {
+export function update(path, book) {
   return send(path, 'PUT', book)
 }
 
