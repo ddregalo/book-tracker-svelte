@@ -1,19 +1,8 @@
 <script>
     import { onMount } from 'svelte'
     import Book from './Book.svelte'; 
-    import { get } from '../clients/booksClient.js';
 
-    let books = [];
-
-    onMount(async function () {
-        const booksResponse = await get("?_sort=id&_order=desc");
-
-        if (booksResponse.status)
-        {
-            books = booksResponse.data
-        }
-    });
-
+    export let books;
 </script>
 
 <div id="books-container">
