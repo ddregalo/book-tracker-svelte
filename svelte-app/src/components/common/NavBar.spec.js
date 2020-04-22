@@ -2,9 +2,11 @@ import { render } from '@testing-library/svelte';
 import NavBar from './NavBar.svelte';
 
 describe('NavBar container', () => {
+  const username = 'test user';
+
   it('should render container html correctly', () => {
     const { container } = render(NavBar, {
-      props: { username: 'test user' } 
+      props: { username } 
     })
 
     expect(container).toContainHTML('<header id="nav-user"><p class="username">book tracker</p> <p class="username">welcome | test user</p></header>')
@@ -12,7 +14,7 @@ describe('NavBar container', () => {
 
   it('should display book manager title', () => {
     const { getByText } = render(NavBar, {
-      props: { username: 'test user' } 
+      props: { username } 
     })
 
     const title = 'book tracker'
@@ -21,8 +23,6 @@ describe('NavBar container', () => {
   })
 
   it('should display welcome with username', () => {
-    const username = 'test user'
-    
     const { getByText } = render(NavBar, {
       props: { username } 
     });
