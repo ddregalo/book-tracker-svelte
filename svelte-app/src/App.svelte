@@ -2,21 +2,16 @@
 	import NavBar from './components/common/NavBar.svelte';
 	import Button from './components/common/Button.svelte';
 	import BookGrid from './components/BookGrid.svelte';
+	import { get } from './clients/booksClient'
 
-	let books = [
-		{
-			title: 'What I Think About When I Think About Running',
-			author: 'Haruki Murakami',
-			coverUrl: 'https://miro.medium.com/max/3056/1*cApQ5sl_OaVJMwHFpoOc1Q.jpeg',
-			rating: 4,
-		},
-		{
-			title: 'The Beach',
-			author: 'Alex Garland',
-			coverUrl: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1539508673l/578523._SY475_.jpg',
-			rating: 3,
-		}
-	]
+	let books = []
+	
+	onMount(async function () {
+		const { data } = await getBooks('/?_sort=title&_order=desc');
+
+		books = data;
+	})
+
 </script>
 
 <main>
@@ -36,10 +31,6 @@
 		text-transform: uppercase;
 		font-size: 4em;
 		font-weight: 100;
-	}
-
-	#add-book-btn {
-		margin: 4em;
 	}
 
 	@media (min-width: 640px) {
