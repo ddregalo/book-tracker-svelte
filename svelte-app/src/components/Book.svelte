@@ -4,9 +4,11 @@
     function isValidUrl(url) {
         return url && /http.+\.(jpg|jpeg|png|gif)$/.test(url);
     }
+
+    const displayDetail = (bookId) => { alert('Viewing book id: ' + bookId)};
 </script>
 
-<a href="#" class="book-card">
+<a href="#" class="book-card" on:click={() => displayDetail(book.id)}>
     <img class="cover-img" alt="Book cover image for {book.title}"src={isValidUrl(book.coverUrl) ? book.coverUrl : ''} />
     <div class="book-details">
         <p class="title">{ book.title || 'title not found' }</p>
