@@ -15,12 +15,16 @@
 					books = booksResponse.data
 			}
 	});
+
+	function showBookDetail(bookId) {
+		console.log('book clicked.....' + bookId);
+	}
 </script>
 
 <main>
 	<NavBar username="katie wise" />
 	<Button>add book</Button>
-	<BookGrid {books} />
+	<BookGrid {books} selectBook={showBookDetail}/>
 </main>
 
 <style>
