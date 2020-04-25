@@ -1,6 +1,9 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+
     export let book = {};
-    export let onBookSelect;
+
+    const dispatch = createEventDispatcher();
 
     function isValidUrl(url) {
         return url && /http.+\.(jpg|jpeg|png|gif)$/.test(url);
@@ -8,7 +11,7 @@
 
 </script>
 
-<a href="#" class="book-card" on:click={() => onBookSelect(book.id)}>
+<a href="#" class="book-card" on:click={() => dispatch('book-select', { id: book.id })}>
     <img class="cover-img" alt="Book cover image for {book.title}"src={isValidUrl(book.coverUrl) ? book.coverUrl : ''} />
     <div class="book-details">
         <p class="title">{ book.title || 'title not found' }</p>

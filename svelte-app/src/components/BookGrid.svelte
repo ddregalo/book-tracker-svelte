@@ -3,12 +3,11 @@
     import Book from './Book.svelte'; 
 
     export let books;
-    export let selectBook;
 </script>
 
 <div id="books-container">
     {#each books as book}
-        <Book {book} onBookSelect={selectBook} />
+        <Book {book} on:book-select />
     {/each}
 </div>
 

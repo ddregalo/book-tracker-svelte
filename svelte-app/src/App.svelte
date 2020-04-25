@@ -16,15 +16,15 @@
 			}
 	});
 
-	function showBookDetail(bookId) {
-		console.log('book clicked.....' + bookId);
+	function showBookDetail(event) {
+		console.log('book event - book id: ' + event.detail.id);
 	}
 </script>
 
 <main>
 	<NavBar username="katie wise" />
 	<Button>add book</Button>
-	<BookGrid {books} selectBook={showBookDetail}/>
+	<BookGrid {books} on:book-select={showBookDetail}/>
 </main>
 
 <style>
