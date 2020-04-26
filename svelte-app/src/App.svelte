@@ -3,6 +3,7 @@
 	import NavBar from './components/common/NavBar.svelte';
 	import Button from './components/common/Button.svelte';
 	import BookGrid from './components/BookGrid.svelte';
+	import BookDetail from './components/BookDetail.svelte';
 	import { getBooks } from './clients/booksClient';
 
 	let books = [];
@@ -16,15 +17,25 @@
 			}
 	});
 
+	let currentPage = 'library'
+	let pageParams = {}
+
 	function showBookDetail(event) {
-		console.log('book event - book id: ' + event.detail.id);
+		currentPage = 'book-detail'
+		pageParams = event.detail
 	}
+
+
 </script>
 
 <main>
 	<NavBar username="katie wise" />
 	<Button>add book</Button>
-	<BookGrid {books} on:book-select={showBookDetail}/>
+	{#if currentPage == 'book-detail'}
+		<BookDetail {...pageParams}/>
+	{:else}
+		<BookGrid {books} on:book-select={showBookDetail}/>
+	{/if}
 </main>
 
 <style>
